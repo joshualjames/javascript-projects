@@ -1,3 +1,3 @@
 console.log("Some Programming Languages:");
 
-console.log("Python\nJavaScript\nJava\nC#\nSwift");
+console.log("\tPython\nJavaScript\n\tJava\nC#\n\tSwift");

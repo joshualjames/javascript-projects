@@ -9,4 +9,9 @@
    multi-line
    comments. */
 
+   //This is also a comment//
+
+   /* Hey, look.
+   This is also a comment*/
+
    console.log("Comments make your code more readable by others.");
