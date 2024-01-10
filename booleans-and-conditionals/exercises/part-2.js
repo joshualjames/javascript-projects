@@ -9,7 +9,7 @@ let shuttleSpeed = 15000;
 
 // a) If crewStatus is true, print "Crew Ready" else print "Crew Not Ready".
 
-if (crewStatus === true) {
+if (crewStatus) {
     console.log("Crew Ready");
 } else {
     console.log("Crew Not Ready")
