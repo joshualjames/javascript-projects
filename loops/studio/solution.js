@@ -15,16 +15,30 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   
   /// Part A #2: Write a ``for`` loop inside this function
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
-  for (let i = 0; i < numMeals; i++) {
-    let meal = [];
-    for (j = 0; j < pantry.length; j++) {
-      meal.push(pantry[j][i]);
+  // for (let i = 0; i < numMeals; i++) {
+  //   let meal = [];
+  //   for (let j = 0; j < pantry.length; j++) {
+  //     meal.push(pantry[j][i]);
 
-    }
-    meals.push(meal);
+  //   }
+  //   meals.push(meal);
+  // }
+  // for (let i = 0; i < numMeals; i++){
+  //   let assembledMeals = [];
+  //   for (let j = 0; j < pantry.length; j++){
+  //     assembledMeals.push(pantry[j][i]);
+  //   }
+  //   meals.push(assembledMeals);
   }
-  return meals;
-}  
+//   for (i in pantry) {
+//     let lunch = [];
+//     for (j in pantry[i]) {
+//       lunch.push(pantry[j][i]);
+//     }
+//     meals.push(lunch);
+//   }
+//   return meals;
+// }  
 
 function askForNumber() {
   numMeals = input.question("How many meals would you like to make? ");
@@ -34,7 +48,6 @@ function askForNumber() {
     numMeals = input.question("Invalid response. Please enter a number 1-6. ");
   }
     return numMeals;
-  
 }
 
 
@@ -42,10 +55,8 @@ function generatePassword(string1, string2) {
   let code = '';
 
   /// Code your Bonus Mission Solution here ///
-  for (i = 0; i < string1.length; i++){
-    
-    
-    console.log(codeArr);
+  for (let i = 0; i < string1.length || i < string2.length; i++){
+    code = code + string1[i] + string2[i];
   }
   return code;
 }
@@ -71,8 +82,8 @@ function runProgram() {
     /// TEST PART C HERE ///
   /// UNCOMMENT the remaining commented lines and change the password1 and password2 strings to ensure your code is doing its job ///
 
-  let password1 = '1234';
-  let password2 = '5678';
+  let password1 = 'Lo0t';
+  let password2 = 'oku!';
   console.log("Time to run the password generator so we can update the menu tomorrow.")
   console.log(`The new password is: ${generatePassword(password1, password2)}`);
 }
