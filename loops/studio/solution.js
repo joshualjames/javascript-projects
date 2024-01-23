@@ -2,11 +2,11 @@ const input = require('readline-sync');
 
 // Part A: #1 Populate these arrays
 
-let protein = [['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans']];
-let grains = [['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers']];
-let veggies = [['peas', 'green beans', 'kale', 'edamame', 'broccoli', 'asparagus']];
-let beverages = [['juice', 'milk', 'water', 'soy milk', 'soda', 'tea']];
-let desserts = [['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi']];
+let protein = ['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans'];
+let grains = ['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers'];
+let veggies = ['peas', 'green beans', 'kale', 'edamame', 'broccoli', 'asparagus'];
+let beverages = ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea'];
+let desserts = ['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi'];
 
 
 function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
@@ -15,21 +15,26 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   
   /// Part A #2: Write a ``for`` loop inside this function
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
+  for (let i = 0; i < numMeals; i++) {
+    let meal = [];
+    for (j = 0; j < pantry.length; j++) {
+      meal.push(pantry[j][i]);
 
-  for (i = 0; i <= crewSize.length; i++){
-    
+    }
+    meals.push(meal);
   }
-
   return meals;
-}
-
+}  
 
 function askForNumber() {
-  numMeals = input.question("How many meals would you like to make?");
+  numMeals = input.question("How many meals would you like to make? ");
   
   /// CODE YOUR SOLUTION TO PART B here ///
-
-  return numMeals;
+  while (Number(numMeals) > 6 || Number(numMeals) < 1 || isNaN(numMeals)) {
+    numMeals = input.question("Invalid response. Please enter a number 1-6. ");
+  }
+    return numMeals;
+  
 }
 
 
@@ -37,7 +42,11 @@ function generatePassword(string1, string2) {
   let code = '';
 
   /// Code your Bonus Mission Solution here ///
-
+  for (i = 0; i < string1.length; i++){
+    
+    
+    console.log(codeArr);
+  }
   return code;
 }
 
@@ -62,10 +71,10 @@ function runProgram() {
     /// TEST PART C HERE ///
   /// UNCOMMENT the remaining commented lines and change the password1 and password2 strings to ensure your code is doing its job ///
 
-  // let password1 = '';
-  // let password2 = '';
-  // console.log("Time to run the password generator so we can update the menu tomorrow.")
-  // console.log(`The new password is: ${generatePassword(password1, password2)}`);
+  let password1 = '1234';
+  let password2 = '5678';
+  console.log("Time to run the password generator so we can update the menu tomorrow.")
+  console.log(`The new password is: ${generatePassword(password1, password2)}`);
 }
 
 module.exports = {
