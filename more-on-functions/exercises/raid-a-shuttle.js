@@ -35,21 +35,27 @@ let dontBeSuspiciousFuel = function (x) {
     return x
   }
 };
-let prospectiveCargo = ["satellite", "gold"];
+let ourCargoHold = [];
+let liberatedCargo = ["satellite", "gold"];
+let bogusCargo = ["potato1", "potato2"];
 let dontBeSuspiciousCargo = function (preciousCargo) {
-  let ourCargoHold = [];
-  let bogusCargo = ["potato1", "potato2"];
   if (ourCargoHold.length === 2) {
-    return `We stole: ${ourCargoHold}}.`
-  } else {
-    cargoHold.splice(cargoHold.indexOf(prospectiveCargo[0]), 1, bogusCargo[0]);
-    ourCargoHold = ourCargoHold.push(prospectiveCargo[0]);
-    bogusCargo = bogusCargo.shift();
+    return ourCargoHold
+  } else 
+    cargoHold.splice(cargoHold.indexOf(liberatedCargo[0]), 1, bogusCargo[0]);
+    ourCargoHold.push(liberatedCargo[0]);
+    bogusCargo.shift();
+    liberatedCargo.shift();
     return dontBeSuspiciousCargo(preciousCargo);
-  }
 }
 
-console.log(dontBeSuspiciousCargo(prospectiveCargo));
+console.log(dontBeSuspiciousCargo(liberatedCargo));
+
+let irs = function (fuelLevel, liberatedCargo) {
+  let arr = dontBeSuspiciousCargo(liberatedCargo);
+  return `Raided ${dontBeSuspiciousFuel(fuelLevel)}kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
+}
+console.log(irs(fuelLevel, liberatedCargo))
 /* Steal some fuel from the shuttle:
  */
  
