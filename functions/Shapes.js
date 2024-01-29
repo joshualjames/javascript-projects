@@ -17,7 +17,7 @@ function makeSquare(width, height, char = "#") {
 }
 
 // console.log(makeSquare(5));
-
+ 
 function makeRectangle(width, height, char = "#") {
     let rectangle = '';
     for (let i = 0; i < height; i++) {
