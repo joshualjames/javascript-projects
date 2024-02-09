@@ -38,4 +38,14 @@ describe("transmission processor", function () {
     expect(result.rawData).toBe(-1);
   });
 
+  test("returns -1 for rawData if < is in a position other than 0", function () {
+    let result = processor("9701::<487<297403495720912>");
+    expect(result.rawData).toBe(-1);
+  })
+
+  // test("returns -1 for rawData if > is anywhere other than the final position", () => {
+  //   let result = processor("9701::<487297403>495720912>");
+  //   expect(result.rawData).toBe(-1);
+  // })
+
  });

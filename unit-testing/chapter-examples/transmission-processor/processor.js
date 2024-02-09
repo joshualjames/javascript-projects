@@ -5,6 +5,12 @@ function processor(transmission) {
     }
     let parts = transmission.split("::");
     let rawData = parts[1];
+    let dataBits = rawData.split("");
+    for (item in dataBits)
+        if (item === "<" && dataBits.indexOf(item) !== 0) {
+        // if (parts.indexOf("<") !== 0) {
+            rawData = -1;
+        };
     if (rawData[0] !== "<") {
         rawData = -1;
     };
