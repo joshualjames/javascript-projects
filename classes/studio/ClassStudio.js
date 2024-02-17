@@ -42,6 +42,13 @@ class CrewCandidate {
         }
         return console.log(this.scores.length - 3);
     }
+    upgradeStatus(currentStatus) {
+        while (this.status() !== currentStatus) {
+            this.addScore(100);
+            console.log(this.average());
+        }
+        return console.log(this.scores.length - 3);
+    }
 }
 
 let bubbaBear = new CrewCandidate('Bubba Bear', 135, [88, 85, 90]);
@@ -54,9 +61,10 @@ candidates.forEach(candidate => {
     let candidateStatus = candidate.status();
     console.log(`${candidate.name} earned an average test score of ${avgScore}% and has a status of ${candidateStatus}`)
 })
-
-gladGator.reachReserve();
-gladGator.reachAccepted();
+gladGator.upgradeStatus("Reserve");
+gladGator.upgradeStatus("Accepted");
+// gladGator.reachReserve();
+// gladGator.reachAccepted();
 
 // console.log(bubbaBear);
 // console.log(merryMaltese);
