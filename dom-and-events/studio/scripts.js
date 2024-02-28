@@ -71,7 +71,7 @@ function init() {
         if (checkValidPosition(shuttleImgTop, shuttleImgLeft - 10)) {
             shuttleImgLeft -= 10;
             shuttleImg.style.left = shuttleImgLeft + "px";
-        } 
+        }
     });
     moveRight.addEventListener("click", () => {
         if (checkValidPosition(shuttleImgTop, shuttleImgLeft + 10)) {
@@ -85,7 +85,7 @@ function init() {
             shuttleImg.style.top = shuttleImgTop + "px";
             shuttleHeight += 10000;
             shuttleHeightText.innerHTML = shuttleHeight;
-        } 
+        }
     });
     moveDown.addEventListener("click", () => {
         if (checkValidPosition(shuttleImgTop + 10, shuttleImgLeft)) {
@@ -96,6 +96,13 @@ function init() {
         }
     });
 
+    abortMissionButton.addEventListener("mouseover", () => {
+        abortMissionButton.style.color = 'red';
+    });
+
+    abortMissionButton.addEventListener('mouseout', () => {
+        abortMissionButton.style.color = '';
+    });
     /*
   
   */
