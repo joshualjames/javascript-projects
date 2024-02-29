@@ -16,6 +16,7 @@ window.addEventListener("load", function () {
             windRatingInput.value === "" ||
             productionServersInput.value === "") {
             alert("All fields are required!");
+            event.preventDefault();
         }
     });
 });
